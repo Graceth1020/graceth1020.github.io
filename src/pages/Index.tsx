@@ -2,8 +2,6 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { projects, writing } from "@/config/projects";
 
 const navLinks = [
-  { label: "Work", href: "#work" },
-  { label: "Writing", href: "#writing" },
   { label: "GitHub", href: "https://github.com/Graceth1020", external: true },
 ];
 
@@ -51,12 +49,6 @@ const Index = () => {
               className="inline-flex items-center gap-1.5 border-b border-foreground/30 pb-0.5 hover:text-accent hover:border-accent transition-colors"
             >
               GitHub <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
-            <a
-              href="mailto:hello@example.com"
-              className="inline-flex items-center gap-1.5 border-b border-foreground/30 pb-0.5 hover:text-accent hover:border-accent transition-colors"
-            >
-              Email <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
           </div>
         </section>
