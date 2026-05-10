@@ -1,4 +1,5 @@
 import { ArrowUpRight, Github } from "lucide-react";
+import { site } from "@/config/site";
 import { projects, writing } from "@/config/projects";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -13,11 +14,11 @@ const Index = () => {
       <header className="border-b border-border">
         <div className="mx-auto flex max-w-[880px] items-center justify-between px-6 py-5">
           <a href="#top" className="font-mono text-sm tracking-tight hover:text-accent transition-colors">
-            graceth1020
+            {site.handle}
           </a>
           <nav className="flex items-center gap-5">
             <a
-              href="https://github.com/Graceth1020"
+              href={site.social.github}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -43,7 +44,7 @@ const Index = () => {
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
             <a
-              href="https://github.com/Graceth1020"
+              href={site.social.github}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 border-b border-foreground/30 pb-0.5 hover:text-accent hover:border-accent transition-colors"
@@ -142,11 +143,11 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-[880px] flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-6 py-8">
-          <p className="text-xs text-muted-foreground">{t('footer.copyright')}</p>
+          <p className="text-xs text-muted-foreground">&copy; {site.year} {site.name}</p>
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
-            <span>{t('footer.built')}</span>
+            <span>{t('footer.built')} {site.builtWith}</span>
             <a
-              href="https://github.com/Graceth1020"
+              href={site.social.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"

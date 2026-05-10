@@ -13,7 +13,7 @@ type TranslationTree = {
   work: { title: string; label: string };
   writing: { title: string; label: string; blogLabel: string };
   project: { viewSource: string };
-  footer: { copyright: string; built: string };
+  footer: { built: string };
 };
 
 export const translations: Record<Locale, TranslationTree> = {
@@ -28,7 +28,7 @@ export const translations: Record<Locale, TranslationTree> = {
     work: { title: 'Selected Work', label: '01 / Work' },
     writing: { title: 'Writing', label: '02 / Notes', blogLabel: 'Blog' },
     project: { viewSource: 'View source' },
-    footer: { copyright: '© 2025 Grace', built: 'Built with Lovable' },
+    footer: { built: 'Built with' },
   },
   zh: {
     nav: { github: 'GitHub' },
@@ -41,6 +41,6 @@ export const translations: Record<Locale, TranslationTree> = {
     work: { title: '精选作品', label: '01 / 作品' },
     writing: { title: '写作', label: '02 / 笔记', blogLabel: '博客' },
     project: { viewSource: '查看源码' },
-    footer: { copyright: '© 2025 Grace', built: '基于 Lovable 构建' },
+    footer: { built: '基于' },
   },
 };
