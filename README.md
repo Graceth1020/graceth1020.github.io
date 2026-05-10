@@ -2,7 +2,9 @@
 
 Personal portfolio site built with React + Vite + Tailwind CSS.  
 Feel free to fork and use this as a template for your own site!  
-[中文说明](README.zh.md)
+
+🔗 **Live preview:** [graceth1020.github.io](https://graceth1020.github.io/)  
+📖 [中文说明](README.zh.md)
 
 ---
 
@@ -27,6 +29,44 @@ Feel free to fork and use this as a template for your own site!
 - Dynamic project listing from config data
 - GitHub integration with source links
 - Deployed via GitHub Actions to GitHub Pages
+
+## Customization
+
+To make this site your own, edit these files:
+
+### 1. Personal info — `src/config/site.ts`
+
+```ts
+export const site = {
+  name: "Your Name",          // displayed in greeting, copyright, SEO
+  handle: "yourhandle",       // shown in top-left nav brand
+  url: "https://example.com",
+  description: "Your SEO description...",
+  social: { github: "https://github.com/yourhandle" },
+  year: "2025",
+  builtWith: "YourFramework", // "Built with YourFramework"
+};
+```
+
+### 2. Projects — `src/config/projects.ts`
+
+Replace the sample projects with your own. Each project has a `description` object with `en` and `zh` fields.
+
+### 3. UI text & translations — `src/config/translations.ts`
+
+Update the hero greeting, bio, section labels, and all UI strings in both `en` and `zh`.
+
+### 4. Meta tags — `index.html`
+
+Update the `<title>` and `<meta>` tags as a static fallback (they're also synced at runtime from `site.ts`).
+
+### 5. Colors — `src/index.css`
+
+Tweak the HSL design tokens in `:root` (light) and `.dark` (dark) to match your brand.
+
+### 6. Logo / favicon — `public/`
+
+Replace `favicon.ico` and add your own assets.
 
 ## Development
 
@@ -55,7 +95,8 @@ src/
 │   ├── ui/            # shadcn/ui components
 │   ├── ThemeToggle.tsx
 │   └── LanguageSwitcher.tsx
-├── config/            # Project data and translations
+├── config/            # Central configuration
+│   ├── site.ts        # Your personal info (name, links, etc.)
 │   ├── projects.ts    # Project listings (multilingual descriptions)
 │   └── translations.ts
 ├── contexts/
