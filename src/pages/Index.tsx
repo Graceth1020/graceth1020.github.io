@@ -1,11 +1,12 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import { projects, writing } from "@/config/projects";
-
-const navLinks = [
-  { label: "GitHub", href: "https://github.com/Graceth1020", external: true },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const Index = () => {
+  const { t, locale } = useLanguage();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
@@ -14,18 +15,18 @@ const Index = () => {
           <a href="#top" className="font-mono text-sm tracking-tight hover:text-accent transition-colors">
             graceth1020
           </a>
-          <nav className="flex items-center gap-6">
-            {navLinks.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target={l.external ? "_blank" : undefined}
-                rel={l.external ? "noopener noreferrer" : undefined}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {l.label}
-              </a>
-            ))}
+          <nav className="flex items-center gap-5">
+            <a
+              href="https://github.com/Graceth1020"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t('nav.github')}
+            </a>
+            <span className="text-muted-foreground/30">|</span>
+            <ThemeToggle />
+            <LanguageSwitcher />
           </nav>
         </div>
       </header>
@@ -33,13 +34,12 @@ const Index = () => {
       <main id="top" className="mx-auto max-w-[880px] px-6">
         {/* Hero */}
         <section className="pt-24 pb-24 md:pt-32 md:pb-32">
-          <p className="label-meta mb-8">— Personal Site</p>
+          <p className="label-meta mb-8">{t('hero.label')}</p>
           <h1 className="font-serif text-6xl md:text-8xl leading-[1.02] tracking-tight">
-            Hi, I&apos;m Grace.
+            {t('hero.greeting')}
           </h1>
           <p className="mt-8 max-w-[55ch] text-lg text-muted-foreground leading-relaxed">
-            I build small, thoughtful things on the web and write about what I learn along the way.
-            This is a quiet corner for my projects, notes, and ongoing experiments.
+            {t('hero.description')}
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm">
             <a
@@ -56,8 +56,8 @@ const Index = () => {
         {/* Selected Work */}
         <section id="work" className="py-24">
           <div className="flex items-baseline justify-between mb-12">
-            <h2 className="font-serif text-4xl md:text-5xl tracking-tight">Selected Work</h2>
-            <span className="label-meta">01 / Work</span>
+            <h2 className="font-serif text-4xl md:text-5xl tracking-tight">{t('work.title')}</h2>
+            <span className="label-meta">{t('work.label')}</span>
           </div>
 
           <ul>
@@ -74,7 +74,7 @@ const Index = () => {
                       <h3 className="font-serif text-2xl md:text-3xl tracking-tight transition-colors group-hover:text-accent">
                         {p.title}
                       </h3>
-                      <p className="mt-2 text-muted-foreground max-w-[55ch]">{p.description}</p>
+                      <p className="mt-2 text-muted-foreground max-w-[55ch]">{p.description[locale]}</p>
                       <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
                         {p.tags.map((t) => (
                           <span key={t} className="label-meta">
@@ -98,7 +98,7 @@ const Index = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-accent transition-colors"
                   >
-                    View source <ArrowUpRight className="h-3 w-3" />
+                    {t('project.viewSource')} <ArrowUpRight className="h-3 w-3" />
                   </a>
                 </div>
               </li>
@@ -109,8 +109,8 @@ const Index = () => {
         {/* Writing */}
         <section id="writing" className="py-24">
           <div className="flex items-baseline justify-between mb-12">
-            <h2 className="font-serif text-4xl md:text-5xl tracking-tight">Writing</h2>
-            <span className="label-meta">02 / Notes</span>
+            <h2 className="font-serif text-4xl md:text-5xl tracking-tight">{t('writing.title')}</h2>
+            <span className="label-meta">{t('writing.label')}</span>
           </div>
 
           <div className="border-t border-border">
@@ -125,10 +125,10 @@ const Index = () => {
                   <h3 className="font-serif text-2xl md:text-3xl tracking-tight transition-colors group-hover:text-accent">
                     {writing.title}
                   </h3>
-                  <p className="mt-2 text-muted-foreground max-w-[55ch]">{writing.description}</p>
+                  <p className="mt-2 text-muted-foreground max-w-[55ch]">{writing.description[locale]}</p>
                 </div>
                 <div className="flex flex-col items-end gap-3 shrink-0">
-                  <span className="label-meta">Blog</span>
+                  <span className="label-meta">{t('writing.blogLabel')}</span>
                   <span className="text-2xl transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent">
                     →
                   </span>
@@ -142,9 +142,9 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-[880px] flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-6 py-8">
-          <p className="text-xs text-muted-foreground">© 2025 Grace</p>
+          <p className="text-xs text-muted-foreground">{t('footer.copyright')}</p>
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
-            <span>Built with Lovable</span>
+            <span>{t('footer.built')}</span>
             <a
               href="https://github.com/Graceth1020"
               target="_blank"
