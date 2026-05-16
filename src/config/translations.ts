@@ -8,7 +8,7 @@ export const localeNames: Record<Locale, string> = {
 };
 
 type TranslationTree = {
-  nav: { github: string };
+  nav: { github: string; mustSeeDaily: string };
   hero: { label: string; greeting: string; description: string };
   work: { title: string; label: string };
   writing: { title: string; label: string; blogLabel: string };
@@ -18,7 +18,7 @@ type TranslationTree = {
 
 export const translations: Record<Locale, TranslationTree> = {
   en: {
-    nav: { github: 'GitHub' },
+    nav: { github: 'GitHub', mustSeeDaily: 'Daily' },
     hero: {
       label: '— Personal Site',
       greeting: "Hi, I'm Grace.",
@@ -31,7 +31,7 @@ export const translations: Record<Locale, TranslationTree> = {
     footer: { built: 'Built with' },
   },
   zh: {
-    nav: { github: 'GitHub' },
+    nav: { github: 'GitHub', mustSeeDaily: '每日必看' },
     hero: {
       label: '— 个人主页',
       greeting: '你好，我是 Grace。',
