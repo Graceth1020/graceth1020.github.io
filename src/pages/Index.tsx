@@ -26,6 +26,15 @@ const Index = () => {
               {t('nav.github')}
             </a>
             <span className="text-muted-foreground/30">|</span>
+            <a
+              href={site.mustSeeDaily}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {t('nav.mustSeeDaily')}
+            </a>
+            <span className="text-muted-foreground/30">|</span>
             <ThemeToggle />
             <LanguageSwitcher />
           </nav>

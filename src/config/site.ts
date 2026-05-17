@@ -12,6 +12,8 @@ export const site = {
   social: {
     github: "https://github.com/Graceth1020",
   },
+  /** Must See Daily URL */
+  mustSeeDaily: "https://graceth1020.github.io/must-see-daily/",
   /** Copyright year */
   year: "2025",
   /** "Built with" attribution */
