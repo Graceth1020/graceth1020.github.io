@@ -18,7 +18,7 @@ export const projects: Project[] = [
     },
     url: "https://graceth1020.github.io/geo-memories-blog/",
     repoUrl: "https://github.com/Graceth1020/geo-memories-blog",
-    tags: ["React", "ECharts"],
+    tags: ["React", "ECharts", "Lovable"],
     year: "2026",
   },
   {
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     },
     url: "https://graceth1020.github.io/daily-dish-delight/#/",
     repoUrl: "https://github.com/Graceth1020/daily-dish-delight",
-    tags: ["React"],
+    tags: ["React", "Lovable"],
     year: "2026",
   },
 ];
