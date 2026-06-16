@@ -18,8 +18,20 @@ export const projects: Project[] = [
     },
     url: "https://graceth1020.github.io/geo-memories-blog/",
     repoUrl: "https://github.com/Graceth1020/geo-memories-blog",
-    tags: ["React", "ECharts", "Lovable"],
-    year: "2025",
+    tags: ["React", "ECharts"],
+    year: "2026",
+  },
+  {
+    id: "hexo-notebook-theme",
+    title: "Hexo Notebook Theme",
+    description: {
+      en: "A clean Hexo theme for learning notes.",
+      zh: "一个简洁的 Hexo 主题，用于学习笔记。",
+    },
+    url: "https://graceth1020.github.io/hexo-notebook-theme/",
+    repoUrl: "https://github.com/Graceth1020/hexo-notebook-theme",
+    tags: ["Hexo"],
+    year: "2026",
   },
   {
     id: "daily-dish-delight",
@@ -30,8 +42,8 @@ export const projects: Project[] = [
     },
     url: "https://graceth1020.github.io/daily-dish-delight/#/",
     repoUrl: "https://github.com/Graceth1020/daily-dish-delight",
-    tags: ["React", "Lovable"],
-    year: "2025",
+    tags: ["React"],
+    year: "2026",
   },
 ];
 
