@@ -28,7 +28,7 @@ export const projects: Project[] = [
       en: "Notebook for English learning.",
       zh: "英语学习笔记。",
     },
-    url: "https://graceth1020.github.io/Graceth1020/English-Notebook",
+    url: "https://graceth1020.github.io/English-Notebook",
     repoUrl: "https://github.com/Graceth1020/English-Notebook",
     tags: ["Hexo", "Notebook Theme"],
     year: "2026",
